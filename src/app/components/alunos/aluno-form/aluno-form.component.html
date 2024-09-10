@@ -1,4 +1,4 @@
-<h2>Criar / Editar - Aluno</h2>
+<h5>Criar / Editar - Aluno</h5>
 
 <section class="col s12">
   <article class="row">
@@ -11,14 +11,14 @@
       <div class="row">
         <div class="input-field col s12">
           <label for="nome">Nome</label> <br> <br>
-          <input class="active" type="text" name="nome" id="nome" [(ngModel)]="aluno.nome">
+          <input class="active" type="text" name="nome" id="nome" [(ngModel)]="aluno.nome" (input)="onInput()">
         </div>
       </div>
 
       <div class="row">
         <div class="input-field col s12">
           <label for="email">Email</label> <br> <br>
-          <input class="active" type="email" name="email" id="email" [(ngModel)]="aluno.email">
+          <input class="active" type="email" name="email" id="email" [(ngModel)]="aluno.email" (input)="onInput()">
         </div>
       </div>
     }

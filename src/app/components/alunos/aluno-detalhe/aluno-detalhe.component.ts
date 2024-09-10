@@ -1,8 +1,10 @@
-import { AlunosService } from './../../../services/alunos/alunos.service';
-import { Subscription } from 'rxjs';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { info } from 'console';
+import { Subscription } from 'rxjs';
+
 import { Alunos } from '../../../interfaces/alunos';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { AlunosService } from './../../../services/alunos/alunos.service';
 
 @Component({
   selector: 'app-aluno-detalhe',
@@ -24,10 +26,16 @@ export class AlunoDetalheComponent implements OnDestroy, OnInit {
   }
 
   ngOnInit(): void {
-    this.subscriptionAluno = this.route.params.subscribe(
+    /*this.subscriptionAluno = this.route.params.subscribe(
       (params) => {
         let id = parseInt(params['id']);
         this.aluno = this.alunosService.getById(id);
+      }
+    );*/
+
+    this.subscriptionAluno = this.route.data.subscribe(
+      (info) => {
+        this.aluno = info['aluno'];
       }
     );
   }

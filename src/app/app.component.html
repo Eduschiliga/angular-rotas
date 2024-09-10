@@ -1,16 +1,16 @@
 
-<nav>
-  <div class="nav-wrapper">
-    <a class="brand-logo right" routerLink="/">Rotas Ng2</a>
-    <ul class="left">
-      <li [routerLinkActive]="'active'"><a routerLink="/login">Login</a></li>
-      <li [routerLinkActive]="'active'"><a routerLink="/cursos" [queryParams]="{pagina: 1}">Cursos</a></li>
-      <li [routerLinkActive]="'active'"><a routerLink="/alunos">Alunos</a></li>
-
-    </ul>
-  </div>
-</nav>
-
+@if(mostrarMenu) {
+  <nav>
+    <div class="nav-wrapper">
+      <a class="brand-logo right" routerLink="/">Rotas Ng2</a>
+      <ul class="left">
+        <li [routerLinkActive]="'active'"><a routerLink="/login">Login</a></li>
+        <li [routerLinkActive]="'active'"><a routerLink="/cursos" [queryParams]="{pagina: 1}">Cursos</a></li>
+        <li [routerLinkActive]="'active'"><a routerLink="/alunos">Alunos</a></li>
+      </ul>
+    </div>
+  </nav>
+}
 
 <main class="container">
   <router-outlet></router-outlet>

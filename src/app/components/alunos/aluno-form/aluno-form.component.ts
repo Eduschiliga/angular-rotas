@@ -1,9 +1,10 @@
+import { FormCandeactivate } from './../../../interfaces/form-candeactivate';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { AlunosService } from '../../../services/alunos/alunos.service';
 import { Subscription } from 'rxjs';
 import { Alunos } from '../../../interfaces/alunos';
-import { FormsModule } from '@angular/forms';
+import { Form, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-aluno-form',
@@ -14,10 +15,10 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './aluno-form.component.html',
   styleUrl: './aluno-form.component.scss'
 })
-export class AlunoFormComponent {
+export class AlunoFormComponent implements FormCandeactivate {
   protected aluno: Alunos | undefined = {id: 0, nome: '', email: ''};
   protected subscriptionAluno!: Subscription;
-
+  protected formMudou: boolean = false;
   constructor(
     private alunosService: AlunosService,
     private route: ActivatedRoute,
@@ -37,6 +38,22 @@ export class AlunoFormComponent {
 
   backPage() {
     this.router.navigate(['/alunos']);
+  }
+
+  onInput() {
+    this.formMudou = true;
+    console.log('mudou');
+  }
+
+  canChangeRoute() {
+    if(this.formMudou) {
+      return confirm('Tem certeza que deseja sair dessa página? Quaisquer modificações não serão salvas.');
+    }
+    return true;
+  }
+
+  canDeactivate(): boolean {
+    return this.canChangeRoute();
   }
 
   ngOnDestroy(): void {

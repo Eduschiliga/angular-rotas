@@ -1,7 +1,7 @@
 <h2>Lista de Cursos</h2>
 <ul class="collection">
   @for (curso of cursosPaginados; track $index) {
-    <li class="collection-item" [routerLink]="['/curso', curso.id]">
+    <li class="collection-item" [routerLink]="['/cursos', curso.id]">
       {{ curso.id }} - {{ curso.nome }}
     </li>
   } @empty {

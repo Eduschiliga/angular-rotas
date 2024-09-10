@@ -1,6 +1,6 @@
-<section>
-  <article class="col s6">
-    <h2>Lista de Alunos matriculados</h2>
+<section class="row">
+  <article class="col s12 m6"> <!-- 'col s12 m6' define o layout responsivo -->
+    <h5>Lista de Alunos Matriculados</h5>
 
     <ul class="collection">
       @for (aluno of alunos; track $index) {
@@ -11,5 +11,9 @@
         <li>Nenhum curso encontrado.</li>
       }
     </ul>
+  </article>
+
+  <article class="col s12 m6"> <!-- 'col s12 m6' para a segunda coluna -->
+    <router-outlet></router-outlet>
   </article>
 </section>
