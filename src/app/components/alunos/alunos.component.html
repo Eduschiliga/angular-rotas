@@ -1,0 +1,15 @@
+<section>
+  <article class="col s6">
+    <h2>Lista de Alunos matriculados</h2>
+
+    <ul class="collection">
+      @for (aluno of alunos; track $index) {
+        <li class="collection-item" [routerLink]="[aluno.id]">
+          #{{ aluno.id }} - {{ aluno.nome }}
+        </li>
+      } @empty {
+        <li>Nenhum curso encontrado.</li>
+      }
+    </ul>
+  </article>
+</section>

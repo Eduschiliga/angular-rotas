@@ -1,0 +1,26 @@
+:host {
+  margin-bottom: 2em;
+}
+
+.paginacao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.paginacao button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: rgb(75, 75, 255);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  cursor: pointer;
+}
+
+.paginacao button:hover {
+  background-color: rgb(75, 75, 255);
+}

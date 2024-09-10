@@ -1,0 +1,7 @@
+@if (curso) {
+  <h3>Detalhe do Curso</h3>
+  <p>ID: {{ idCurso}}</p>
+  <p>Nome Curso: {{ curso?.nome}}</p>
+} @else {
+  <p>Curso não encontrado, tente novamente mais tarde.</p>
+}

@@ -1,0 +1,29 @@
+<h2>Criar / Editar - Aluno</h2>
+
+<section class="col s12">
+  <article class="row">
+    @if (aluno) {
+      <div class="input-field col s12">
+        <label for="disabled">ID</label> <br> <br>
+        <input class="active" type="text" name="" id="disabled" disabled [(ngModel)]="aluno.id">
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="nome">Nome</label> <br> <br>
+          <input class="active" type="text" name="nome" id="nome" [(ngModel)]="aluno.nome">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="email">Email</label> <br> <br>
+          <input class="active" type="email" name="email" id="email" [(ngModel)]="aluno.email">
+        </div>
+      </div>
+    }
+  </article>
+
+  <button (click)="backPage()" class="waves-effect waves-light btn">Voltar</button>
+</section>
+

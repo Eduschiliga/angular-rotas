@@ -1,0 +1,16 @@
+<h2>Lista de Cursos</h2>
+<ul class="collection">
+  @for (curso of cursosPaginados; track $index) {
+    <li class="collection-item" [routerLink]="['/curso', curso.id]">
+      {{ curso.id }} - {{ curso.nome }}
+    </li>
+  } @empty {
+    <li>Nenhum curso encontrado.</li>
+  }
+</ul>
+
+<div class="paginacao">
+  <button (click)="mudarPagina(pagina - 1)" [disabled]="pagina === 1">Anterior</button>
+  <span>Página {{ pagina }} de {{ totalPaginas }}</span>
+  <button (click)="proxPagina()" [disabled]="pagina === totalPaginas">Próxima</button>
+</div>
